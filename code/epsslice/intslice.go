@@ -3,7 +3,7 @@ package epsslice
 import (
 	"fmt"
 
-	"github.com/user/EPSUtils/code/EPSInt"
+	"github.com/eightpixelssquare/EPSUtils/code/EPSInt"
 )
 
 // Int is a slice of ints

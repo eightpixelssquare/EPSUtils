@@ -1,6 +1,6 @@
 package epsslice
 
-import "github.com/user/EPSUtils/code/EPSInt64"
+import "github.com/eightpixelssquare/EPSUtils/code/EPSInt64"
 
 // Int64 is a slice of ints
 type Int64 []int64

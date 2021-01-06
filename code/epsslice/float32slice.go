@@ -1,6 +1,6 @@
 package epsslice
 
-import "github.com/user/EPSUtils/code/EPSFloat32"
+import "github.com/eightpixelssquare/EPSUtils/code/EPSFloat32"
 
 // Float32 is a slice of ints
 type Float32 []float32
