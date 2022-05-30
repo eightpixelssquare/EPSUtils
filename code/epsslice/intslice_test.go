@@ -225,3 +225,21 @@ func TestInt_Contains(t *testing.T) {
 		})
 	}
 }
+
+func TestInt_Min(t *testing.T) {
+	tests := []struct {
+		g    Int
+		want int
+	}{
+		{Int{1, 5, 7}, 1},
+		{Int{}, 0},
+		{Int{1, -5, 7}, -5},
+	}
+	for _, tt := range tests {
+		t.Run("", func(t *testing.T) {
+			if got := tt.g.Min(); got != tt.want {
+				t.Errorf("Int.Min() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

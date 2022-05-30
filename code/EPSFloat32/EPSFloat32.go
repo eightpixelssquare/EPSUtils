@@ -36,6 +36,14 @@ func Limit(v float32, min float32, max float32) float32 {
 	return v
 }
 
+// Abs returns the absolute value of v
+func Abs(v float32) float32 {
+	if v < 0 {
+		return -v
+	}
+	return v
+}
+
 ///////////////////////////////////////////////////////////////////////////////////
 // Rounding functions
 

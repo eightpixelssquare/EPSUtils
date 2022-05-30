@@ -21,6 +21,17 @@ func RandRange(min int, max int) int {
 	return Rand(max-min) + min
 }
 
+// RandRangeSafe returns a random number between [min and max)
+func RandRangeSafe(min int, max int) int {
+	if min == max {
+		return min
+	}
+	if min > max {
+		min, max = max, min
+	}
+	return Rand(max-min) + min
+}
+
 // ToMoney returns a "£pounds.pence" string in of i pence
 func ToMoney(i int) string {
 	pounds := i / 100
