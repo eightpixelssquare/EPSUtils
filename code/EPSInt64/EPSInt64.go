@@ -43,6 +43,17 @@ func Max(v1 int64, v2 int64) int64 {
 	return v2
 }
 
+// Limit limits v in the range min,max
+func Limit(v int64, min int64, max int64) int64 {
+	if v < min {
+		return min
+	}
+	if v > max {
+		return max
+	}
+	return v
+}
+
 func Abs(v int64) int64 {
 	if v > 0 {
 		return v

@@ -22,3 +22,18 @@ func (g Float64) Max() float64 {
 	}
 	return s
 }
+
+// ElementClampPanic returns the element at index i clamped to the slice.  If the slice is empty it panics
+func (g Float64) ElementClampPanic(i int) float64 {
+	if len(g) == 0 {
+		panic("Slice is empty")
+	}
+	if i < 0 {
+		return g[0]
+	}
+	if i >= len(g) {
+		return g[len(g)-1]
+	}
+
+	return g[i]
+}

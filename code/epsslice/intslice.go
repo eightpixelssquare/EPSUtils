@@ -30,6 +30,22 @@ func (g Int) Copy() Int {
 	return s
 }
 
+// Min returns the smallest value in the slice
+// If the slice is empty returns 0
+func (g Int) Min() int {
+	if len(g) == 0 {
+		return 0
+	}
+	min := g[0]
+	for _, v := range g {
+		if v < min {
+			min = v
+		}
+	}
+
+	return min
+}
+
 // Sum returns the sum of all elements in the slice
 func (g Int) Sum() int {
 	var s int

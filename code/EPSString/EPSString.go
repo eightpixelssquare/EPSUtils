@@ -4,7 +4,10 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 )
+
+// Force kick
 
 // ToInt string to int
 func ToInt(s string) (int, error) {
@@ -79,7 +82,16 @@ func ToBool(s string) (bool, error) {
 	return value, err
 }
 
-// ToIntSlice seperates the string by sep then returns a slice of ints
+// ToBool calls ParseBool
+func ToBool0(s string) bool {
+	value, err := strconv.ParseBool(s)
+	if err != nil {
+		return false
+	}
+	return value
+}
+
+// ToIntSlice separates the string by sep then returns a slice of ints
 func ToIntSlice(s, sep string) ([]int, error) {
 	ret := []int{}
 	split := strings.Split(s, sep)
@@ -93,7 +105,7 @@ func ToIntSlice(s, sep string) ([]int, error) {
 	return ret, nil
 }
 
-// ToFloat32Slice seperates the string by sep then returns a slice of float32s
+// ToFloat32Slice separates the string by sep then returns a slice of float32s
 func ToFloat32Slice(s, sep string) ([]float32, error) {
 	ret := []float32{}
 	split := strings.Split(s, sep)
@@ -105,6 +117,21 @@ func ToFloat32Slice(s, sep string) ([]float32, error) {
 		ret = append(ret, val)
 	}
 	return ret, nil
+}
+
+// ToFloat320Slice separates the string by sep then returns a slice of float32s
+func ToFloat320Slice(s, sep string) []float32 {
+	ret := []float32{}
+	split := strings.Split(s, sep)
+	for _, v := range split {
+		ret = append(ret, ToFloat320(v))
+	}
+	return ret
+}
+
+// SecondsToTime0 converts a string of seconds to time.Time
+func SecondsToTime0(secs string) time.Time {
+	return time.Unix(ToInt640(secs), 0)
 }
 
 // FromMoney string of money to int pence

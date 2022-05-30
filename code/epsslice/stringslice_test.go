@@ -123,3 +123,24 @@ func TestStringSliceIndexOf(t *testing.T) {
 		})
 	}
 }
+
+func TestString_AddUnique(t *testing.T) {
+	type args struct {
+		n string
+	}
+	tests := []struct {
+		name string
+		g    *String
+		args args
+		want int
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.g.AddUnique(tt.args.n); got != tt.want {
+				t.Errorf("String.AddUnique() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
